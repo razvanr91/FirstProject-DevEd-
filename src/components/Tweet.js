@@ -3,7 +3,7 @@ import React from 'react';
 export default function Tweet({ name, tweet, tweets, setTweets }) {
 
     const deleteTweet = () => {
-        setTweets(tweets.filter(t => t !== tweet))
+        setTweets(tweets.filter(t => t.id !== tweet.id))
     }
 
     return (

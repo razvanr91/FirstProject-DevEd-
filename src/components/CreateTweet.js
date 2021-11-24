@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 as uuid } from 'uuid';
 
 export default function CreateTweet({ tweets, setTweets, textInput, setTextInput }) {
 
@@ -8,7 +9,7 @@ export default function CreateTweet({ tweets, setTweets, textInput, setTextInput
 
     const submitTweetHandler = (e) => {
         e.preventDefault();
-        setTweets([...tweets, textInput]);
+        setTweets([...tweets, { id: uuid(), message: textInput }]);
         setTextInput("");
     }
 

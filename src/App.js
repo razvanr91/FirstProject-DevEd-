@@ -2,12 +2,17 @@ import logo from './logo.svg';
 import './App.css';
 import TweetList from './components/TweetList';
 import CreateTweet from './components/CreateTweet';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   const [name, setName] = useState("Razvan");
   const [textInput, setTextInput] = useState("");
   const [tweets, setTweets] = useState([]);
+
+
+  useEffect(() => {
+    console.log("We run a function");
+  }, [textInput]);
 
   return (
     <div className="App" >
